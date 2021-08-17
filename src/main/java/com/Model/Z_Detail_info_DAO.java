@@ -86,7 +86,25 @@ public class Z_Detail_info_DAO {
 		return z_list;
 	}
 	
-	
+	public int delete_Z_Detail_Info(Z_Detail_info_DTO dto) {
+		
+		conn();
+
+		try {
+			String sql = "delete from Z_DETAIL_INFO where numbering = ?"; // where 조건 필요시 추가하기
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, dto.getNumbering());
+			rtn = psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+
+			System.out.println(e.toString());
+		} finally {
+			close();
+		}
+		
+		return rtn;
+	}
 	
 	public int Update_Z_Detail_Info(Z_Detail_info_DTO dto) {
 		
