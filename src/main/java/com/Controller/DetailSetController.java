@@ -7,8 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.Model.Detail_Info_DAO;
-import com.Model.Detail_Info_DTO;
+import com.Model.K_Detail_Info_DAO;
+import com.Model.K_Detail_Info_DTO;
 
 public class DetailSetController implements Command {
 
@@ -30,8 +30,8 @@ public class DetailSetController implements Command {
 		String automode = request.getParameter("automode");
 		String supplyinfo = request.getParameter("supplyinfo");
 
-		Detail_Info_DTO dto = new Detail_Info_DTO(numbering, salinity, indoor_temp, indoor_humid, water_temp, wire_temp, water_high, daily_prod, harvest, place_size, automode, supplyinfo);
-		Detail_Info_DAO dao = new Detail_Info_DAO();
+		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering, salinity, indoor_temp, indoor_humid, water_temp, wire_temp, water_high, daily_prod, harvest, place_size, automode, supplyinfo);
+		K_Detail_Info_DAO dao = new K_Detail_Info_DAO();
 
 		int cnt = dao.Update_Detail_Info(dto);
 		

@@ -1,19 +1,17 @@
-<%@page import="com.Model.Detail_Info_DTO"%>
+<%@page import="com.Model.K_Detail_Info_DTO"%>
 <%@page import="com.Model.MembersDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%
-	    MembersDTO user = (MembersDTO)session.getAttribute("info");	
-		Detail_Info_DTO dto = null;
+MembersDTO user = (MembersDTO)session.getAttribute("info");	
+		K_Detail_Info_DTO dto = null;
 		
 		if(user == null){
-			response.sendRedirect("Login.jsp");
+	response.sendRedirect("Login.jsp");
 		}else {
-			dto = (Detail_Info_DTO)session.getAttribute("diinfo");
-			
+	dto = (K_Detail_Info_DTO)session.getAttribute("diinfo");
+	
 		}
-			
-		
 %>
 <!DOCTYPE html>
 <html>

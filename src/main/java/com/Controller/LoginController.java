@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.Model.Detail_Info_DAO;
-import com.Model.Detail_Info_DTO;
+import com.Model.K_Detail_Info_DAO;
+import com.Model.K_Detail_Info_DTO;
 import com.Model.MembersDAO;
 import com.Model.MembersDTO;
 
@@ -32,9 +32,9 @@ public class LoginController implements Command {
 			HttpSession session = request.getSession();
 			session.setAttribute("info", info);
 
-			Detail_Info_DTO didto = new Detail_Info_DTO(info.getIdseq());
-			Detail_Info_DAO didao = new Detail_Info_DAO();
-			Detail_Info_DTO diinfo = didao.Get_Detail_Info(didto);
+			K_Detail_Info_DTO didto = new K_Detail_Info_DTO(info.getIdseq());
+			K_Detail_Info_DAO didao = new K_Detail_Info_DAO();
+			K_Detail_Info_DTO diinfo = didao.Get_Detail_Info(didto);
 			System.out.println(didto.getNumbering() + "sdfsldflsajkdflskajdlfkjsldfkjlk");
 			session.setAttribute("diinfo", diinfo);
 
