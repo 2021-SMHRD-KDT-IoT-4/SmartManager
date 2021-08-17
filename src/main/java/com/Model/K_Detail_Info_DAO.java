@@ -90,7 +90,7 @@ public class K_Detail_Info_DAO {
 		return k_list;
 	}
 
-	public int Get_Detail_Info(K_Detail_Info_DTO dto) {
+	public int delete_K_Detail_Info(K_Detail_Info_DTO dto) {
 
 		conn();
 
