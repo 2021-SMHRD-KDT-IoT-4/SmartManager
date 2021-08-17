@@ -28,7 +28,7 @@
 							</ul>
 						</nav>
 
-				</div>
+				</div> 
 
 			<!-- Main -->
 				<section class="wrapper style1" style="height: 435px">
