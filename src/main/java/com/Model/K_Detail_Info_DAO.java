@@ -89,43 +89,7 @@ public class K_Detail_Info_DAO {
 		return k_list;
 	}
 	
-		public K_Detail_Info_DTO Get_Detail_Info(K_Detail_Info_DTO dto) {
 		
-		conn();
-
-		try {
-			String sql = "select * from K_DETAIL_INFO where numbering = ?"; // where 조건 필요시 추가하기
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, dto.getNumbering());
-			rs = psmt.executeQuery();
-		
-			if (rs.next()) {
-				System.out.println(rs.getInt("numbering") + "sdfdsdfsdf");
-				
-				int numbering = rs.getInt("numbering");
-				int k_salinity = rs.getInt("salinity");
-				int k_indoor_temp = rs.getInt("indoor_temp");
-				int k_indoor_humid = rs.getInt("indoor_humid");
-				int k_water_temp = rs.getInt("water_temp");
-				int k_wire_temp = rs.getInt("wire_temp");
-				int k_water_high = rs.getInt("water_high");
-				int k_daily_prod = rs.getInt("daily_prod");
-				String k_harvest = rs.getString("harvest");
-				int k_place_size = rs.getInt("place_size");
-				int k_auto_mode = rs.getInt("k_auto_mode");
-				
-				this.dto = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_indoor_humid, k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_auto_mode);
-			}
-
-		} catch (SQLException e) {
-
-			System.out.println(e.toString());
-		} finally {
-			close();
-		}
-		
-		return this.dto;
-	}
 		
 		public int Update_Detail_Info(K_Detail_Info_DTO dto) {
 			

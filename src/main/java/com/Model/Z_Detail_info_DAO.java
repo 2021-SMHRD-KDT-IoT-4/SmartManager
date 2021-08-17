@@ -86,41 +86,7 @@ public class Z_Detail_info_DAO {
 		return z_list;
 	}
 	
-	public Z_Detail_info_DTO Get_Z_Detail_Info(Z_Detail_info_DTO dto) {
-		
-		conn();
-
-		try {
-			String sql = "select * from Z_DETAIL_INFO where numbering = ?"; // where 조건 필요시 추가하기
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, dto.getNumbering());
-			rs = psmt.executeQuery();
-		
-			if (rs.next()) {
-				System.out.println(rs.getInt("numbering"));
-				
-				int numbering = rs.getInt("numbering");
-				int z_salinity = rs.getInt("z_salinity");
-				int z_indoor_temp = rs.getInt("z_indoor_temp");
-				int z_indoor_humid = rs.getInt("z_indoor_humid");
-				int z_water_temp = rs.getInt("z_water_temp");
-				int z_wire_temp = rs.getInt("z_wire_temp");
-				int z_water_high = rs.getInt("z_water_high");
-				int z_place_size = rs.getInt("z_place_size");
-				int z_pump_move = rs.getInt("z_pump_move");
-				
-				this.dto = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid, z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move);
-			}
-
-		} catch (SQLException e) {
-
-			System.out.println(e.toString());
-		} finally {
-			close();
-		}
-		
-		return this.dto;
-	}
+	
 	
 	public int Update_Z_Detail_Info(Z_Detail_info_DTO dto) {
 		
