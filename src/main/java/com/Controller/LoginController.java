@@ -33,10 +33,6 @@ public class LoginController implements Command {
 			session.setAttribute("info", info);
 
 			K_Detail_Info_DTO didto = new K_Detail_Info_DTO(info.getIdseq());
-			K_Detail_Info_DAO didao = new K_Detail_Info_DAO();
-			K_Detail_Info_DTO diinfo = didao.Get_Detail_Info(didto);
-			System.out.println(didto.getNumbering() + "sdfsldflsajkdflskajdlfkjsldfkjlk");
-			session.setAttribute("diinfo", diinfo);
 
 		}
 

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Controller.Command;
+import com.Controller.GetAll_Z_Detail_Info_Controller;
 import com.Controller.JoinController;
 import com.Controller.LoginController;
 
@@ -30,9 +31,12 @@ public class FrontController extends HttpServlet {
 		
 		if (result_URI.equals("login.do")) {
 			_interface = new LoginController();
-		} if (result_URI.equals("Join.do")) {
+		}else if (result_URI.equals("Join.do")) {
 			_interface = new JoinController();
-		} 
+		}else if(result_URI.equals("GetAll_Z_Detail_Info.do")) {
+			_interface = new GetAll_Z_Detail_Info_Controller();
+		}
+		
 		
 		_interface.command(request, response);
 	
