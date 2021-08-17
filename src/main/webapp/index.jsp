@@ -1,16 +1,14 @@
+<%@page import="java.util.ArrayList"%>
 <%@page import="com.Model.K_Detail_Info_DTO"%>
 <%@page import="com.Model.MembersDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%
-MembersDTO user = (MembersDTO)session.getAttribute("info");	
-		K_Detail_Info_DTO dto = null;
+		MembersDTO user = (MembersDTO)session.getAttribute("info");	
+		ArrayList<K_Detail_Info_DTO> dtos = null;
 		
 		if(user == null){
-	response.sendRedirect("Login.jsp");
-		}else {
-	dto = (K_Detail_Info_DTO)session.getAttribute("diinfo");
-	
+		response.sendRedirect("Login.jsp");
 		}
 %>
 <!DOCTYPE html>
@@ -43,7 +41,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 			<!-- Highlights -->
 				<section class="wrapper style13">
 					<div class="container" >
-					<%if(user!=null){ %>
+				
 					<table style="color:white;  margin-left: 50px; margin-bottom: 0px; padding-left: 0px; margin-right: 50px; margin-top: 60px;">
 								<tr>
 									<td>
@@ -52,7 +50,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 												<img src="images/pic01.jpg" class="img">
 											</a>
 											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
-													염도 : <%=dto.getSalinity() %> %
+													더울수록 시원한맛
 											</div>
 										</section>
 									</td>									
@@ -62,7 +60,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 												<img src="images/pic01.jpg" class="img">
 											</a>
 											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
-													실내 온습도 : <%=dto.getIndoor_temp() %>
+													실내 온습도 :
 											</div>
 										</section>
 									</td>
@@ -72,7 +70,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 												<img src="images/pic01.jpg" class="img">
 											</a>
 											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
-												염수 온도 : <%=dto.getWater_temp()%>
+												염수 온도 : 
 											</div>
 										</section>
 									</td>
@@ -82,7 +80,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 												<img src="images/pic01.jpg" class="img">
 											</a>
 											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
-												열선 온도 : <%=dto.getWire_temp() %>
+												열선 온도 : 
 											</div>
 										</section>
 									</td>
@@ -95,7 +93,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 												<img src="images/pic01.jpg" class="img">
 											</a>
 											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
-												수위 정보 : <%=dto.getWater_high() %>
+												수위 정보 :
 											</div>
 										</section>
 									</td>									
@@ -105,7 +103,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 												<img src="images/pic01.jpg" class="img">
 											</a>
 											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
-												일일 생산량 : <%=dto.getDaily_prod() %>
+												일일 생산량 : 
 											</div>
 										</section>
 									</td>
@@ -115,7 +113,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 												<img src="images/pic01.jpg" class="img">
 											</a>
 											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
-												수확가능 시기 : <%=dto.getHarvest() %>
+												수확가능 시기 : 
 											</div>
 										</section>
 									</td>
@@ -125,7 +123,7 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 												<img src="images/pic01.jpg" class="img">
 											</a>
 											<div style="margin-left: 15px; margin-top: 0px; padding-bottom: 10px; padding-top: 10px; padding-left: 0px; padding-right: 0px; margin-right: 15px;">
-												염전 크기 : <%=dto.getPlace_size() %>
+												염전 크기 : 
 											</div>
 										</section>
 									</td>
@@ -133,7 +131,6 @@ MembersDTO user = (MembersDTO)session.getAttribute("info");
 								</tr>
 							</table>
 					
-					<%} %>
 					</div>
 				</section>
 				

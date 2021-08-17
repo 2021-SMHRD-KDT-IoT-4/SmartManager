@@ -7,13 +7,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Saltern_DAO {
-	
+
 	Connection conn = null;
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 	int rtn = 0;
-	
-	
+
 	public void conn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -29,7 +28,7 @@ public class Saltern_DAO {
 		}
 
 	}
-	
+
 	public void close() {
 
 		try {
@@ -46,9 +45,9 @@ public class Saltern_DAO {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Saltern_DTO Get_Saltern(Saltern_DTO dto) {
-		
+
 		conn();
 
 		try {
@@ -61,8 +60,9 @@ public class Saltern_DAO {
 			while (rs.next()) {
 				int numbering = rs.getInt(1);
 				String number_id = rs.getString(2);
-				
-				dto= new Saltern_DTO(numbering, number_id);
+				int part = rs.getInt(3);
+
+				dto = new Saltern_DTO(numbering, number_id, part);
 			}
 
 		} catch (SQLException e) {
@@ -74,24 +74,20 @@ public class Saltern_DAO {
 
 		return dto;
 	}
-	
-	
-	
+
 	public int Set_Saltern(Saltern_DTO dto) {
-		
+
 		conn();
-		String sql = "insert into child values(?, ?)";
+		String sql = "insert into SALTERN values(?, ?, ?)";
 
 		try {
 			psmt = conn.prepareStatement(sql);
-			
+
 			psmt.setInt(1, dto.getNumbering());
 			psmt.setString(2, dto.getMember_id());
-			
-			
-			rtn = psmt.executeUpdate();
+			psmt.setInt(2, dto.getPart());
 
-			
+			rtn = psmt.executeUpdate();
 
 		} catch (SQLException e) {
 
@@ -102,14 +98,5 @@ public class Saltern_DAO {
 
 		return rtn;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }
