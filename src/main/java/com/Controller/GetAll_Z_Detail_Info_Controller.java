@@ -20,10 +20,9 @@ public class GetAll_Z_Detail_Info_Controller implements Command {
 
 		request.setCharacterEncoding("EUC-KR");
 
-		int numbering = Integer.parseInt(request.getParameter("numbering"));
-		int req = Integer.parseInt("req");
 
-		Z_Detail_info_DTO dto = new Z_Detail_info_DTO(numbering);
+		int req = Integer.parseInt(request.getParameter("req"));
+
 		Z_Detail_info_DAO dao = new Z_Detail_info_DAO();
 		ArrayList<Z_Detail_info_DTO> resultDTO = dao.All_Z_Detail_info();
 
@@ -51,7 +50,6 @@ public class GetAll_Z_Detail_Info_Controller implements Command {
 					data.put("water_high", resultDTO.get(i).getNumbering());
 					data.put("place_size", resultDTO.get(i).getNumbering());
 					data.put("pump_move", resultDTO.get(i).getNumbering());
-					
 					req_array.add(data);
 				}
 				
