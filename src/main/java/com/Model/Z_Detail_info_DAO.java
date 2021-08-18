@@ -111,7 +111,7 @@ public class Z_Detail_info_DAO {
 		conn();
 
 		String sql = "update Z_DETAIL_INFO set numbering=?, z_salinity=?, z_indoor_temp=?, z_indoor_humid =?,"
-				+ "z_water_temp =?,z_wire_temp =?,z_water_high =?,z_place_size =?,z_pump_move =?";
+				+ "z_water_temp =?,z_wire_temp =?,z_water_high =?,z_place_size =?,z_pump_move =? WHERE numbering = ?";
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -125,6 +125,7 @@ public class Z_Detail_info_DAO {
 			psmt.setInt(7, dto.getZ_water_high());
 			psmt.setInt(9, dto.getZ_place_size());
 			psmt.setInt(11, dto.getZ_pump_move());
+			psmt.setInt(12, dto.getNumbering());
 
 			rtn = psmt.executeUpdate();
 

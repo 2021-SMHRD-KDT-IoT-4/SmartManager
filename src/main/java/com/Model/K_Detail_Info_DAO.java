@@ -130,6 +130,7 @@ public class K_Detail_Info_DAO {
 			psmt.setString(9, dto.getK_harvest());
 			psmt.setInt(10, dto.getK_place_size());
 			psmt.setInt(11, dto.getK_automode());
+			psmt.setInt(12, dto.getNumbering());
 
 			rtn = psmt.executeUpdate();
 
