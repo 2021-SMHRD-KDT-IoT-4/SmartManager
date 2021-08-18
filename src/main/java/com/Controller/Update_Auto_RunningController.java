@@ -16,6 +16,14 @@ public class Update_Auto_RunningController implements Command {
 	@Override
 	public void command(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("EUC-KR");
+		
+		int req = 0;
+		try {
+			req = Integer.parseInt(request.getParameter("req"));
+		} catch (Exception e) {
+			
+		}
+		
 		Auto_Running_DAO dao = new Auto_Running_DAO();
 		Auto_Running_DTO dto = new Auto_Running_DTO(Integer.parseInt(request.getParameter("numbering")),
 				Integer.parseInt(request.getParameter("fan_run")),

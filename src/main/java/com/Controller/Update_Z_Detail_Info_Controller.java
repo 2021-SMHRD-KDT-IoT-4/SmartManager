@@ -25,7 +25,12 @@ public class Update_Z_Detail_Info_Controller implements Command {
 		int z_place_size = Integer.parseInt(request.getParameter("z_place_size"));
 		int z_pump_move = Integer.parseInt(request.getParameter("z_pump_move"));
 		
-		int req = Integer.parseInt(request.getParameter("req"));
+		int req = 0;
+		try {
+			req = Integer.parseInt(request.getParameter("req"));
+		} catch (Exception e) {
+			
+		}
 
 		Z_Detail_info_DTO dto = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid, z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move);
 		Z_Detail_info_DAO dao = new Z_Detail_info_DAO();

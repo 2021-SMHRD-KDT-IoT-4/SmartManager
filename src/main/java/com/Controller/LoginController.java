@@ -26,9 +26,14 @@ public class LoginController implements Command {
 		MembersDTO dto = new MembersDTO(id, pw);
 		MembersDAO dao = new MembersDAO();
 		MembersDTO info = dao.login(dto);
-
-		int req = Integer.parseInt(request.getParameter("req"));
-
+		int req = 0;
+		try {
+			req = Integer.parseInt(request.getParameter("req"));
+		} catch (Exception e) {
+			
+		}
+	
+		
 		if (req == 0) {
 
 			if (info != null) {
@@ -42,7 +47,7 @@ public class LoginController implements Command {
 			} else {
 				response.sendRedirect("login.jsp");
 			}
-		}else {
+		} else {
 			PrintWriter out = response.getWriter();
 			if (info != null) {
 				out.print("1");

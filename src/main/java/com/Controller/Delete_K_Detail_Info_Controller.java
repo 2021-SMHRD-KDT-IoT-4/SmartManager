@@ -20,7 +20,12 @@ public class Delete_K_Detail_Info_Controller implements Command {
 		request.setCharacterEncoding("EUC-KR");
 		
 		int numbering = Integer.parseInt(request.getParameter("numbering"));
-		int req = Integer.parseInt(request.getParameter("req"));
+		int req = 0;
+		try {
+			req = Integer.parseInt(request.getParameter("req"));
+		} catch (Exception e) {
+			
+		}
 
 		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering);
 		K_Detail_Info_DAO dao = new K_Detail_Info_DAO();

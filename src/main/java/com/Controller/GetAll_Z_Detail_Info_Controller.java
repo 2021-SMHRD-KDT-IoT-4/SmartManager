@@ -21,7 +21,12 @@ public class GetAll_Z_Detail_Info_Controller implements Command {
 		request.setCharacterEncoding("EUC-KR");
 
 
-		int req = Integer.parseInt(request.getParameter("req"));
+		int req = 0;
+		try {
+			req = Integer.parseInt(request.getParameter("req"));
+		} catch (Exception e) {
+			
+		}
 
 		Z_Detail_info_DAO dao = new Z_Detail_info_DAO();
 		ArrayList<Z_Detail_info_DTO> resultDTO = dao.All_Z_Detail_info();

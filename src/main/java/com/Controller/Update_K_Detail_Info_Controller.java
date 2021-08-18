@@ -29,7 +29,12 @@ public class Update_K_Detail_Info_Controller implements Command {
 		int k_place_size = Integer.parseInt(request.getParameter("k_place_size"));
 		int k_automode = Integer.parseInt(request.getParameter("k_automode"));
 		
-		int req = Integer.parseInt(request.getParameter("req"));
+		int req = 0;
+		try {
+			req = Integer.parseInt(request.getParameter("req"));
+		} catch (Exception e) {
+			
+		}
 
 		
 		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_indoor_humid, k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_automode);

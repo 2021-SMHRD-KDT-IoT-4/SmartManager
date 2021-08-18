@@ -16,8 +16,12 @@ public class JoinController implements Command {
 	public void command(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("EUC-KR");
-		int req = Integer.parseInt(request.getParameter("req"));
-
+		int req = 0;
+		try {
+			req = Integer.parseInt(request.getParameter("req"));
+		} catch (Exception e) {
+			
+		}
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 
