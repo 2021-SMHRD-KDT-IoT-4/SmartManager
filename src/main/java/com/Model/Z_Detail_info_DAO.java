@@ -73,7 +73,7 @@ public class Z_Detail_info_DAO {
 				int z_place_size = rs.getInt(8);
 				int z_pump_move = rs.getInt(9);
 				
-				info = new Z_Detail_info_DTO(rtn, rtn, rtn, rtn, rtn, rtn, rtn, rtn, rtn);
+				info = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid, z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move);
 				z_list.add(info);
 			}
 
