@@ -31,7 +31,6 @@
 							<ul>
 								<li><a href="index.jsp">Home</a></li>
 								<li><a href="no-sidebar.html">CCTV</a></li>
-								<li><a href="no-sidebar.html">염전제어</a></li>
 								<li><a href="no-sidebar.html">생산정보</a></li>
 								<li><a href="no-sidebar.html">염전관리</a></li>
 							</ul>

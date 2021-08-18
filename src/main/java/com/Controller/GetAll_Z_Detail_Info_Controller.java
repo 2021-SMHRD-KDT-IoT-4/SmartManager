@@ -48,18 +48,19 @@ public class GetAll_Z_Detail_Info_Controller implements Command {
 				for (int i = 0; i < resultDTO.size(); i++) {
 					JSONObject data = new JSONObject();
 					data.put("numbering", resultDTO.get(i).getNumbering());
-					data.put("salinity", resultDTO.get(i).getZ_salinity());
-					data.put("indoor_temp", resultDTO.get(i).getZ_indoor_temp());
-					data.put("indoor_humid", resultDTO.get(i).getZ_indoor_humid());
-					data.put("water_temp", resultDTO.get(i).getZ_water_temp());
-					data.put("wire_temp", resultDTO.get(i).getZ_wire_temp());
-					data.put("water_high", resultDTO.get(i).getZ_water_high());
-					data.put("place_size", resultDTO.get(i).getZ_place_size());
-					data.put("pump_move", resultDTO.get(i).getZ_pump_move());
+					data.put("z_salinity", resultDTO.get(i).getZ_salinity());
+					data.put("z_indoor_temp", resultDTO.get(i).getZ_indoor_temp());
+					data.put("z_indoor_humid", resultDTO.get(i).getZ_indoor_humid());
+					data.put("z_water_temp", resultDTO.get(i).getZ_water_temp());
+					data.put("z_wire_temp", resultDTO.get(i).getZ_wire_temp());
+					data.put("z_water_high", resultDTO.get(i).getZ_water_high());
+					data.put("z_place_size", resultDTO.get(i).getZ_place_size());
+					data.put("z_pump_move", resultDTO.get(i).getZ_pump_move());
 					req_array.add(data);
 				}
 				
-			
+		
+				
 				
 				
 				rtn.put("data", req_array);
