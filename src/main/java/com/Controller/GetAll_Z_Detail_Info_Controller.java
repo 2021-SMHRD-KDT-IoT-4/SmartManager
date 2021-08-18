@@ -59,7 +59,7 @@ public class GetAll_Z_Detail_Info_Controller implements Command {
 			
 				out.print(rtn.toJSONString());
 			} else {
-				out.print("False");
+				out.print("0");
 			}
 		}
 

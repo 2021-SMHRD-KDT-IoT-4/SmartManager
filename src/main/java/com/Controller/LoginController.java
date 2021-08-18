@@ -1,6 +1,7 @@
 package com.Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -26,17 +27,30 @@ public class LoginController implements Command {
 		MembersDAO dao = new MembersDAO();
 		MembersDTO info = dao.login(dto);
 
-		if (info != null) {
-			System.out.println("로그인 성공");
+		int req = Integer.parseInt(request.getParameter("req"));
 
-			HttpSession session = request.getSession();
-			session.setAttribute("info", info);
+		if (req == 0) {
 
-			K_Detail_Info_DTO didto = new K_Detail_Info_DTO(info.getIdseq());
+			if (info != null) {
+				System.out.println("로그인 성공");
 
+				HttpSession session = request.getSession();
+				session.setAttribute("info", info);
+
+				K_Detail_Info_DTO didto = new K_Detail_Info_DTO(info.getIdseq());
+				response.sendRedirect("index.jsp");
+			} else {
+				response.sendRedirect("login.jsp");
+			}
+		}else {
+			PrintWriter out = response.getWriter();
+			if (info != null) {
+				out.print("1");
+			} else {
+				out.print("0");
+			}
 		}
 
-		response.sendRedirect("index.jsp");
 	}
 
 }

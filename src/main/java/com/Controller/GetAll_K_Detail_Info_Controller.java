@@ -24,7 +24,8 @@ public class GetAll_K_Detail_Info_Controller implements Command {
 		
 		
 		int numbering = Integer.parseInt(request.getParameter("numbering"));
-		int req = Integer.parseInt("req");
+		int req = Integer.parseInt(request.getParameter("req"));
+
 		
 		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering);
 		K_Detail_Info_DAO dao = new K_Detail_Info_DAO();
@@ -68,7 +69,7 @@ public class GetAll_K_Detail_Info_Controller implements Command {
 				
 				
 			} else {
-				out.print("False");
+				out.print("0");
 			}
 		}
 
