@@ -8,9 +8,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Controller.Command;
+import com.Controller.ControlGetController;
+import com.Controller.ControlSetController;
+import com.Controller.Delete_K_Detail_Info_Controller;
+import com.Controller.Delete_Z_Detail_Info_Controller;
+import com.Controller.GetAll_K_Detail_Info_Controller;
 import com.Controller.GetAll_Z_Detail_Info_Controller;
+import com.Controller.GetAuto_RunningController;
+import com.Controller.GetOutPutController;
+import com.Controller.Insert_K_Detail_Info_Controller;
+import com.Controller.Insert_Z_Detail_Info_Controller;
 import com.Controller.JoinController;
 import com.Controller.LoginController;
+import com.Controller.LogoutController;
+import com.Controller.SetOutPutController;
+import com.Controller.Update_Auto_RunningController;
+import com.Controller.Update_K_Detail_Info_Controller;
+import com.Controller.Update_Z_Detail_Info_Controller;
 
 /**
  * Servlet implementation class FrontController
@@ -33,10 +47,37 @@ public class FrontController extends HttpServlet {
 			_interface = new LoginController();
 		}else if (result_URI.equals("Join.do")) {
 			_interface = new JoinController();
+		}else if(result_URI.equals("Logout.do")) {
+			_interface = new LogoutController();
+		}else if(result_URI.equals("ControlGet.do")) {
+			_interface = new ControlGetController();
+		}else if(result_URI.equals("ControlSet.do")) {
+			_interface = new ControlSetController();
+		}else if(result_URI.equals("Delete_K_Detail_Info.do")) {
+			_interface = new Delete_K_Detail_Info_Controller();
+		}else if(result_URI.equals("Delete_Z_Detail_Info.do")) {
+			_interface = new Delete_Z_Detail_Info_Controller();
+		}else if(result_URI.equals("GetAll_K_Detail_Info.do")) {
+			_interface = new GetAll_K_Detail_Info_Controller();
 		}else if(result_URI.equals("GetAll_Z_Detail_Info.do")) {
 			_interface = new GetAll_Z_Detail_Info_Controller();
+		}else if(result_URI.equals("GetAuto_Running.do")) {
+			_interface = new GetAuto_RunningController();
+		}else if(result_URI.equals("GetOutPut.do")) {
+			_interface = new GetOutPutController();
+		}else if(result_URI.equals("Insert_K_Detail_Info.do")) {
+			_interface = new Insert_K_Detail_Info_Controller();
+		}else if(result_URI.equals("Insert_Z_Detail_Info.do")) {
+			_interface = new Insert_Z_Detail_Info_Controller();
+		}else if(result_URI.equals("SetOutPut.do")) {
+			_interface = new SetOutPutController();
+		}else if(result_URI.equals("Update_Auto_Running.do")) {
+			_interface = new Update_Auto_RunningController();
+		}else if(result_URI.equals("Update_K_Detail_Info.do")) {
+			_interface = new Update_K_Detail_Info_Controller();
+		}else if(result_URI.equals("Update_Z_Detail_Info.do")) {
+			_interface = new Update_Z_Detail_Info_Controller();
 		}
-		
 		
 		_interface.command(request, response);
 	
