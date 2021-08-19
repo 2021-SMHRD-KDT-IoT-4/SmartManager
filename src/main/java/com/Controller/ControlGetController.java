@@ -29,6 +29,7 @@ public class ControlGetController implements Command {
 		
 		ControlDTO condto = new ControlDTO(Integer.parseInt(numbering));
 		
+		
 		ControlDAO control = new ControlDAO();
 		ControlDTO data = control.select(condto);  
 		

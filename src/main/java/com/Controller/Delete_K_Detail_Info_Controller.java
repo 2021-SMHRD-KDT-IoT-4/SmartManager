@@ -23,7 +23,8 @@ public class Delete_K_Detail_Info_Controller implements Command {
 		int req = 0;
 		try {
 			req = Integer.parseInt(request.getParameter("req"));
-		} catch (Exception e) {
+		} catch (Exception e) { 
+			
 			
 		}
 
