@@ -75,9 +75,9 @@ public class K_Detail_Info_DAO {
 				String k_harvest = rs.getString(9);
 				int k_place_size = rs.getInt(10);
 				int k_automode = rs.getInt(11);
+				int node = rs.getInt(12);
 
-				info = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_indoor_humid, k_water_temp,
-						k_wire_temp, k_water_temp, k_daily_prod, k_harvest, k_place_size, k_automode);
+				info = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_indoor_humid, k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_automode, node);
 				k_list.add(info);
 			}
 
@@ -114,7 +114,7 @@ public class K_Detail_Info_DAO {
 		conn();
 
 		String sql = "update K_DETAIL_INFO set numbering=?, k_salinity=?, k_indoor_temp=?, k_indoor_humid =?,"
-				+ "k_water_temp =?,k_wire_temp =?,k_water_high =?,k_daily_prod =?,k_harvest =?,k_place_size =?,k_auto_mode =? where numbering = ?";
+				+ "k_water_temp =?,k_wire_temp =?,k_water_high =?,k_daily_prod =?,k_harvest =?,k_place_size =?,k_auto_mode =?,node = ? where numbering = ?";
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -130,7 +130,8 @@ public class K_Detail_Info_DAO {
 			psmt.setString(9, dto.getK_harvest());
 			psmt.setInt(10, dto.getK_place_size());
 			psmt.setInt(11, dto.getK_automode());
-			psmt.setInt(12, dto.getNumbering());
+			psmt.setInt(12, dto.getNode());
+			psmt.setInt(13, dto.getNumbering());
 
 			rtn = psmt.executeUpdate();
 
@@ -148,7 +149,7 @@ public class K_Detail_Info_DAO {
 
 		conn();
 
-		String sql = "insert into K_DETAIL_INFO values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into K_DETAIL_INFO values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -164,6 +165,7 @@ public class K_Detail_Info_DAO {
 			psmt.setString(9, dto.getK_harvest());
 			psmt.setInt(10, dto.getK_place_size());
 			psmt.setInt(11, dto.getK_automode());
+			psmt.setInt(12, dto.getNode());
 
 			rtn = psmt.executeUpdate();
 

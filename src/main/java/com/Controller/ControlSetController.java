@@ -26,7 +26,16 @@ public class ControlSetController implements Command {
 		String light = request.getParameter("light");
 		String camera = request.getParameter("camera");
 		
-		ControlDTO cntdto = new ControlDTO(Integer.parseInt(numbering), fan, pump, wire, pusher, conveyer, light, camera);
+		ControlDTO cntdto = new ControlDTO(Integer.parseInt(numbering),
+											Integer.parseInt(fan),
+											Integer.parseInt(pump),
+											Integer.parseInt(wire),
+											Integer.parseInt(pusher),
+											Integer.parseInt(conveyer),
+											Integer.parseInt(light),
+											Integer.parseInt(camera)
+											);
+						
 		
 		ControlDAO control = new ControlDAO();
 		int rtn = control.update(cntdto);

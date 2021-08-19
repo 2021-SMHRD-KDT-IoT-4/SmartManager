@@ -31,8 +31,6 @@ public class GetAll_K_Detail_Info_Controller implements Command {
 			
 		}
 
-		
-		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering);
 		K_Detail_Info_DAO dao = new K_Detail_Info_DAO();
 		ArrayList<K_Detail_Info_DTO> resultDTO = dao.All_K_Detail_info();
 		
@@ -62,6 +60,7 @@ public class GetAll_K_Detail_Info_Controller implements Command {
 					data.put("k_harvest", resultDTO.get(i).getK_harvest());
 					data.put("k_place_size", resultDTO.get(i).getK_place_size());
 					data.put("k_automode", resultDTO.get(i).getK_automode());
+					data.put("node", resultDTO.get(i).getNode());
 					
 					req_array.add(data);
 					

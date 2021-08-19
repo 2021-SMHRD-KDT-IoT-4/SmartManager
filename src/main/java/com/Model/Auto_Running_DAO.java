@@ -63,9 +63,11 @@ public class Auto_Running_DAO {
 				int pump_run = rs.getInt("pump_run");
 				int wire_run = rs.getInt("wire_run");
 				int light_run = rs.getInt("light_run");
+				int stalinity_run = rs.getInt("stalinity_run");
+				int waterhigh_run = rs.getInt("waterhigh_run");
 			
 
-				this.dto = new Auto_Running_DTO(numbering,fan_run,pump_run,wire_run,light_run);
+				this.dto = new Auto_Running_DTO(numbering, fan_run, pump_run, wire_run, light_run, stalinity_run,waterhigh_run);
 			}
 
 		} catch (SQLException e) {
@@ -84,7 +86,7 @@ public class Auto_Running_DAO {
 			conn();
 
 			String sql = "UPDATE AUTO_RUNNING SET numbering = ?, fan_run = ?, pump_run = ?, "
-					+ "wire_run = ?, light_run = ? WHERE = ? ";
+					+ "wire_run = ?, light_run = ?, stalinity_run = ? WHERE = ? ";
 
 			psmt = conn.prepareStatement(sql);
 
@@ -93,7 +95,9 @@ public class Auto_Running_DAO {
 			psmt.setInt(3, dto.getPump_run());
 			psmt.setInt(4, dto.getWire_run());
 			psmt.setInt(5, dto.getLight_run());
-			psmt.setInt(6, dto.getNumbering());
+			psmt.setInt(6, dto.getStalinity_run());
+			psmt.setInt(7, dto.getNumbering());
+			
 
 			rtn = psmt.executeUpdate();
 

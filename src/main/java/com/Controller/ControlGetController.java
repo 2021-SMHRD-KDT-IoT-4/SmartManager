@@ -18,14 +18,6 @@ public class ControlGetController implements Command {
 		
 		request.setCharacterEncoding("EUC-KR");
 		String numbering = request.getParameter("numbering");
-//		String fan = request.getParameter("fan");
-//		String pump = request.getParameter("pump");
-//		String wire = request.getParameter("wire");
-//		String pusher = request.getParameter("pusher");
-//		String conveyer = request.getParameter("conveyer");
-//		String light = request.getParameter("light");
-//		String camera = request.getParameter("camera");
-		
 		
 		ControlDTO condto = new ControlDTO(Integer.parseInt(numbering));
 		

@@ -7,8 +7,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.Model.Auto_Running_DAO;
+import com.Model.Auto_Running_DTO;
 import com.Model.K_Detail_Info_DAO;
 import com.Model.K_Detail_Info_DTO;
+import com.Model.Z_Detail_info_DAO;
+import com.Model.Z_Detail_info_DTO;
 
 public class Insert_K_Detail_Info_Controller implements Command {
 
@@ -28,6 +32,7 @@ public class Insert_K_Detail_Info_Controller implements Command {
 		String k_harvest = request.getParameter("k_harvest");
 		int k_place_size = Integer.parseInt(request.getParameter("k_place_size"));
 		int k_automode = Integer.parseInt(request.getParameter("k_automode"));
+		int node = Integer.parseInt(request.getParameter("node"));
 		
 		int req = 0;
 		try {
@@ -37,7 +42,7 @@ public class Insert_K_Detail_Info_Controller implements Command {
 		}
 
 		
-		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_indoor_humid, k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_automode);
+		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_indoor_humid, k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_automode, node);
 		K_Detail_Info_DAO dao = new K_Detail_Info_DAO();
 		
 		int cnt = dao.insert_K_Detail_Info(dto);

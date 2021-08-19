@@ -4,21 +4,21 @@ public class ControlDTO {
 	
 	
 	private int numbering; // 염전번호
-	private String fan;   // 환풍제어
-	private String pump;  // 수조펌프
-	private String wire;  // 바닥열선제어
-	private String pusher;// 밀대제어
-	private String conveyer;// 컨베이어 제어
-	private String light; // 조명제어
-	private String camera; // CCTV제어
+	private int fan;   // 환풍제어
+	private int pump;  // 수조펌프
+	private int wire;  // 바닥열선제어
+	private int pusher;// 밀대제어
+	private int conveyer;// 컨베이어 제어
+	private int light; // 조명제어
+	private int camera; // CCTV제어
 	
 	
 	
 	
 
 
-	public ControlDTO(int numbering, String fan, String pump, String wire, String pusher, String conveyer, String light,
-			String camera) {
+	public ControlDTO(int numbering, int fan, int pump, int wire, int pusher, int conveyer, int light,
+			int camera) {
 		super();
 		this.numbering = numbering;
 		this.fan = fan;
@@ -58,85 +58,85 @@ public class ControlDTO {
 
 
 
-	public String getFan() {
+	public int getFan() {
 		return fan;
 	}
 
 
 
-	public void setFan(String fan) {
+	public void setFan(int fan) {
 		this.fan = fan;
 	}
 
 
 
-	public String getPump() {
+	public int getPump() {
 		return pump;
 	}
 
 
 
-	public void setPump(String pump) {
+	public void setPump(int pump) {
 		this.pump = pump;
 	}
 
 
 
-	public String getWire() {
+	public int getWire() {
 		return wire;
 	}
 
 
 
-	public void setWire(String wire) {
+	public void setWire(int wire) {
 		this.wire = wire;
 	}
 
 
 
-	public String getPusher() {
+	public int getPusher() {
 		return pusher;
 	}
 
 
 
-	public void setPusher(String pusher) {
+	public void setPusher(int pusher) {
 		this.pusher = pusher;
 	}
 
 
 
-	public String getConveyer() {
+	public int getConveyer() {
 		return conveyer;
 	}
 
 
 
-	public void setConveyer(String conveyer) {
+	public void setConveyer(int conveyer) {
 		this.conveyer = conveyer;
 	}
 
 
 
-	public String getLight() {
+	public int getLight() {
 		return light;
 	}
 
 
 
-	public void setLight(String light) {
+	public void setLight(int light) {
 		this.light = light;
 	}
 
 
 
-	public String getCamera() {
+	public int getCamera() {
 		return camera;
 	}
 
 
 
-	public void setCamera(String camera) {
+	public void setCamera(int camera) {
 		this.camera = camera;
 	}
 	

@@ -86,6 +86,44 @@ public class Z_Detail_info_DAO {
 		return z_list;
 	}
 	
+	public Z_Detail_info_DTO Get_Z_Detail_info(Z_Detail_info_DTO dto) {
+
+		z_list = new ArrayList<Z_Detail_info_DTO>();
+		conn();
+
+		try {
+			String sql = "select * from z_detail_info where = ?";
+
+			psmt.setInt(1, dto.getNumbering());
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+
+				int numbering = rs.getInt(1);
+				int z_salinity = rs.getInt(2);
+				int z_indoor_temp = rs.getInt(3);
+				int z_indoor_humid = rs.getInt(4);
+				int z_water_temp = rs.getInt(5);
+				int z_wire_temp = rs.getInt(6);
+				int z_water_high = rs.getInt(7);
+				int z_place_size = rs.getInt(8);
+				int z_pump_move = rs.getInt(9);
+				
+				info = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid, z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move);
+			
+			}
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return info;
+	}
+	
 	public int delete_Z_Detail_Info(Z_Detail_info_DTO dto) {
 		
 		conn();
