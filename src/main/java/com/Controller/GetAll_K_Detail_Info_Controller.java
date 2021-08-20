@@ -52,13 +52,13 @@ public class GetAll_K_Detail_Info_Controller implements Command {
 					data.put("numbering", resultDTO.get(i).getNumbering());
 					data.put("k_salinity", resultDTO.get(i).getK_salinity());
 					data.put("k_indoor_temp", resultDTO.get(i).getK_indoor_temp());
-					data.put("k_indoor_humid", resultDTO.get(i).getK_indoor_humid());
 					data.put("k_water_temp", resultDTO.get(i).getK_water_temp());
 					data.put("k_wire_temp", resultDTO.get(i).getK_wire_temp());
 					data.put("k_water_high", resultDTO.get(i).getK_water_high());
 					data.put("k_daily_prod", resultDTO.get(i).getK_daily_prod());
 					data.put("k_harvest", resultDTO.get(i).getK_harvest());
 					data.put("k_place_size", resultDTO.get(i).getK_place_size());
+					data.put("k_indoor_humid", resultDTO.get(i).getK_indoor_humid());
 					data.put("k_automode", resultDTO.get(i).getK_automode());
 					data.put("node", resultDTO.get(i).getNode());
 					

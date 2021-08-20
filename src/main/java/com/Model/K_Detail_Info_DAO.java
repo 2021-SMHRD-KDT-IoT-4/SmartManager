@@ -77,7 +77,7 @@ public class K_Detail_Info_DAO {
 				int k_automode = rs.getInt(11);
 				int node = rs.getInt(12);
 
-				info = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_indoor_humid, k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_automode, node);
+				info = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_indoor_humid, k_automode, node);
 				k_list.add(info);
 			}
 

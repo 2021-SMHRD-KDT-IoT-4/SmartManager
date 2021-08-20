@@ -43,8 +43,8 @@ public class Update_K_Detail_Info_Controller implements Command {
 
 		}
 
-		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_indoor_humid,
-				k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_automode, node);
+		K_Detail_Info_DTO dto = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_water_temp,
+				k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_indoor_humid, k_automode, node);
 		K_Detail_Info_DAO dao = new K_Detail_Info_DAO();
 
 		int cnt = dao.Update_Detail_Info(dto);
