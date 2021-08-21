@@ -16,8 +16,7 @@ import com.Controller.GetAll_K_Detail_Info_Controller;
 import com.Controller.GetAll_Z_Detail_Info_Controller;
 import com.Controller.GetAuto_RunningController;
 import com.Controller.GetOutPutController;
-import com.Controller.Insert_K_Detail_Info_Controller;
-import com.Controller.Insert_Z_Detail_Info_Controller;
+import com.Controller.Insert_Saltern_Controller;
 import com.Controller.JoinController;
 import com.Controller.LoginController;
 import com.Controller.LogoutController;
@@ -65,10 +64,8 @@ public class FrontController extends HttpServlet {
 			_interface = new GetAuto_RunningController();
 		}else if(result_URI.equals("GetOutPut.do")) {
 			_interface = new GetOutPutController();
-		}else if(result_URI.equals("Insert_K_Detail_Info.do")) {
-			_interface = new Insert_K_Detail_Info_Controller();
-		}else if(result_URI.equals("Insert_Z_Detail_Info.do")) {
-			_interface = new Insert_Z_Detail_Info_Controller();
+		}else if(result_URI.equals("InsertSaltern.do")) {
+			_interface = new Insert_Saltern_Controller();
 		}else if(result_URI.equals("SetOutPut.do")) {
 			_interface = new SetOutPutController();
 		}else if(result_URI.equals("Update_Auto_Running.do")) {

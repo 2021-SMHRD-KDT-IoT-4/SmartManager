@@ -14,6 +14,14 @@ public class Saltern_DTO {
 	}
 	
 	
+	
+	public Saltern_DTO(String member_id, int part) {
+		this.member_id = member_id;
+		this.part = part;
+	}
+
+
+
 	public int getNumbering() {
 		return numbering;
 	}

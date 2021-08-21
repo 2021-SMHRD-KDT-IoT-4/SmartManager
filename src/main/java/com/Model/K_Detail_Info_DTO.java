@@ -20,6 +20,21 @@ public class K_Detail_Info_DTO {
 		this.numbering = numbering;
 	}
 	
+	public K_Detail_Info_DTO(int numbering,int k_place_size,int node) {
+		this.numbering = numbering;
+		this.k_salinity = 0;
+		this.k_indoor_temp =0;
+		this.k_water_temp =0;
+		this.k_wire_temp = 0;
+		this.k_water_high =0;
+		this.k_daily_prod = 0;
+		this.k_harvest = "";
+		this.k_place_size = k_place_size;
+		this.k_indoor_humid = 0;
+		this.k_automode =0;
+		this.node = node;
+	}
+	
 	
 	public K_Detail_Info_DTO(int numbering, int k_salinity, int k_indoor_temp, int k_water_temp, int k_wire_temp,
 			int k_water_high, int k_daily_prod, String k_harvest, int k_place_size, int k_indoor_humid, int k_automode,

@@ -74,17 +74,43 @@ public class Saltern_DAO {
 
 		return dto;
 	}
+	
+	public Saltern_DTO Get_Last_Saltern() {
+		
+		conn();
+		Saltern_DTO dto = null;
+		try {
+			String sql = "SELECT * FROM(SELECT * FROM K_DETAIL_INFO ORDER BY NUMBERING DESC) WHERE ROWNUM = 1;"; // where 조건 필요시 추가하기
+			
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				int numbering = rs.getInt(1);
+				String number_id = rs.getString(2);
+				int part = rs.getInt(3);
+				
+				dto = new Saltern_DTO(numbering, number_id, part);
+			}
+			
+		} catch (SQLException e) {
+			
+			System.out.println(e.toString());
+		} finally {
+			close();
+		}
+		
+		return dto;
+	}
 
-	public int Set_Saltern(Saltern_DTO dto) {
+	public int Insert_Saltern(Saltern_DTO dto) {
 
 		conn();
-		String sql = "insert into SALTERN values(?, ?, ?)";
+		String sql = "insert into SALTERN values(NUMBERSEQ.nextval, ?, ?)";
 
 		try {
 			psmt = conn.prepareStatement(sql);
 
-			psmt.setInt(1, dto.getNumbering());
-			psmt.setString(2, dto.getMember_id());
+			psmt.setString(1, dto.getMember_id());
 			psmt.setInt(2, dto.getPart());
 
 			rtn = psmt.executeUpdate();
@@ -98,5 +124,6 @@ public class Saltern_DAO {
 
 		return rtn;
 	}
-
+	
+	
 }
