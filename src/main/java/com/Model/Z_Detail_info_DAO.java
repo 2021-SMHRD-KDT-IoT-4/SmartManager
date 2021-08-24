@@ -193,9 +193,9 @@ public class Z_Detail_info_DAO {
 			psmt.setInt(4, dto.getZ_indoor_humid());
 			psmt.setInt(5, dto.getZ_water_temp());
 			psmt.setInt(6, dto.getZ_wire_temp());
-			psmt.setInt(6, dto.getZ_water_high());
-			psmt.setInt(6, dto.getZ_place_size());
-			psmt.setInt(6, dto.getZ_pump_move());
+			psmt.setInt(7, dto.getZ_water_high());
+			psmt.setInt(8, dto.getZ_place_size());
+			psmt.setInt(9, dto.getZ_pump_move());
 
 			rtn = psmt.executeUpdate();
 			

@@ -157,13 +157,13 @@ public class K_Detail_Info_DAO {
 			psmt.setInt(1, dto.getNumbering());
 			psmt.setInt(2, dto.getK_salinity());
 			psmt.setInt(3, dto.getK_indoor_temp());
-			psmt.setInt(4, dto.getK_indoor_humid());
-			psmt.setInt(5, dto.getK_water_temp());
-			psmt.setInt(6, dto.getK_wire_temp());
-			psmt.setInt(7, dto.getK_water_high());
-			psmt.setInt(8, dto.getK_daily_prod());
-			psmt.setString(9, dto.getK_harvest());
-			psmt.setInt(10, dto.getK_place_size());
+			psmt.setInt(4, dto.getK_water_temp());
+			psmt.setInt(5, dto.getK_wire_temp());
+			psmt.setInt(6, dto.getK_water_high());
+			psmt.setInt(7, dto.getK_daily_prod());
+			psmt.setString(8, dto.getK_harvest());
+			psmt.setInt(9, dto.getK_place_size());
+			psmt.setInt(10, dto.getK_indoor_humid());
 			psmt.setInt(11, dto.getK_automode());
 			psmt.setInt(12, dto.getNode());
 

@@ -9,7 +9,7 @@ public class K_Detail_Info_DTO {
 	private int k_wire_temp = 0;    // 바닥열선온도
 	private int k_water_high = 0;   //수위정보
 	private int k_daily_prod = 0;   //일일생산량
-	private String k_harvest  = null;  // 예상수확가능시기
+	private String k_harvest;  // 예상수확가능시기
 	private int k_place_size = 0;     // 염전크기
 	private int k_indoor_humid = 0;	// 실내습도
 	private int k_automode = 0;       // 자동/수동
@@ -28,10 +28,10 @@ public class K_Detail_Info_DTO {
 		this.k_wire_temp = 0;
 		this.k_water_high =0;
 		this.k_daily_prod = 0;
-		this.k_harvest = "";
+		this.k_harvest = "10";
 		this.k_place_size = k_place_size;
 		this.k_indoor_humid = 0;
-		this.k_automode =0;
+		this.k_automode = 0;
 		this.node = node;
 	}
 	

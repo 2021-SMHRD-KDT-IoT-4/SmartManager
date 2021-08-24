@@ -78,6 +78,31 @@ public class Auto_Running_DAO {
 		return dto;
 	}
 	
+	
+	public int Insert_Auto_Running(Auto_Running_DTO dto) {
+		rtn=0;
+		
+		conn();
+
+		String sql = "insert into AUTO_RUNNING values(?, 0,0,0,0,0,0)";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setInt(1, dto.getNumbering());
+			
+			rtn = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+
+		}
+				
+		return rtn;
+	}
+	
 	public int Update_Auto_Running(Auto_Running_DTO dto) {
 
 		rtn = 0;

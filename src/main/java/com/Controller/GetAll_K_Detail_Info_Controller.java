@@ -23,7 +23,7 @@ public class GetAll_K_Detail_Info_Controller implements Command {
 		request.setCharacterEncoding("EUC-KR");
 		
 		
-		int numbering = Integer.parseInt(request.getParameter("numbering"));
+		
 		int req = 0;
 		try {
 			req = Integer.parseInt(request.getParameter("req"));

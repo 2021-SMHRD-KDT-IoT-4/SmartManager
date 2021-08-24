@@ -21,8 +21,16 @@ public class Auto_Running_DTO {
 		this.waterhigh_run = waterhigh_run;
 	}
 	
+	
+	
 	public Auto_Running_DTO(int numbering) {
 		this.numbering = numbering;
+		this.fan_run = 0;
+		this.pump_run = 0;
+		this.wire_run = 0;
+		this.light_run = 0;
+		this.stalinity_run = 0;
+		this.waterhigh_run = 0;
 	}
 
 

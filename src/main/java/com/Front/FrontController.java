@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.Controller.Command;
-import com.Controller.ControlGetController;
 import com.Controller.ControlSetController;
 import com.Controller.Delete_K_Detail_Info_Controller;
 import com.Controller.Delete_Z_Detail_Info_Controller;
@@ -48,9 +47,9 @@ public class FrontController extends HttpServlet {
 			_interface = new JoinController();
 		}else if(result_URI.equals("Logout.do")) {
 			_interface = new LogoutController();
-		}else if(result_URI.equals("ControlGet.do")) {
-			_interface = new ControlGetController();
-		}else if(result_URI.equals("ControlSet.do")) {
+		}else if(result_URI.equals("GetAllControl.do")) {
+			//_interface = new ControlGetController();
+		}else if(result_URI.equals("SetControl.do")) {
 			_interface = new ControlSetController();
 		}else if(result_URI.equals("Delete_K_Detail_Info.do")) {
 			_interface = new Delete_K_Detail_Info_Controller();

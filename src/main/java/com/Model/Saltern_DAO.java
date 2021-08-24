@@ -80,7 +80,7 @@ public class Saltern_DAO {
 		conn();
 		Saltern_DTO dto = null;
 		try {
-			String sql = "SELECT * FROM(SELECT * FROM K_DETAIL_INFO ORDER BY NUMBERING DESC) WHERE ROWNUM = 1;"; // where 조건 필요시 추가하기
+			String sql = "SELECT * FROM(SELECT * FROM SALTERN ORDER BY NUMBERING DESC) WHERE ROWNUM = 1"; // where 조건 필요시 추가하기
 			
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();

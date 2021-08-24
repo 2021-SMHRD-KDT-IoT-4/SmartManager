@@ -11,14 +11,10 @@ public class ControlDTO {
 	private int conveyer;// 컨베이어 제어
 	private int light; // 조명제어
 	private int camera; // CCTV제어
-	
-	
-	
-	
-
+	private int part;
 
 	public ControlDTO(int numbering, int fan, int pump, int wire, int pusher, int conveyer, int light,
-			int camera) {
+			int camera , int part) {
 		super();
 		this.numbering = numbering;
 		this.fan = fan;
@@ -28,18 +24,38 @@ public class ControlDTO {
 		this.conveyer = conveyer;
 		this.light = light;
 		this.camera = camera;
+		this.part = part;
 	}
-
-	
-	
-	
-	
 
 	public ControlDTO(int numbering) {
 		super();
 		this.numbering = numbering;
 	}
 
+
+
+	public ControlDTO(int numbering,int part) {
+		
+		this.numbering = numbering;
+		this.part = part;
+		
+	}
+
+
+
+
+	public int getPart() {
+		return part;
+	}
+
+
+
+
+
+
+	public void setPart(int part) {
+		this.part = part;
+	}
 
 
 
