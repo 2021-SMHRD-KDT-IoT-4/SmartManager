@@ -50,7 +50,7 @@ public class Auto_Running_DAO {
 
 		try {
 			conn();
-			String sql = "SELECT * FROM AUTO_RUNNING WHERE = ?";
+			String sql = "SELECT * FROM AUTO_RUNNING WHERE numbering = ?";
 			
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, dto.getNumbering());
