@@ -111,7 +111,7 @@ public class Auto_Running_DAO {
 			conn();
 
 			String sql = "UPDATE AUTO_RUNNING SET numbering = ?, fan_run = ?, pump_run = ?, "
-					+ "wire_run = ?, light_run = ?, stalinity_run = ? WHERE = ? ";
+					+ "wire_run = ?, light_run = ?, stalinity_run = ? WHERE numbering = ? ";
 
 			psmt = conn.prepareStatement(sql);
 
