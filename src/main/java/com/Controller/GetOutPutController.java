@@ -21,15 +21,12 @@ public class GetOutPutController implements Command {
 		OutPut_DTO dto = new OutPut_DTO(Integer.parseInt(request.getParameter("numbering")));
 		ArrayList<OutPut_DTO> dtos = dao.Get_All_OutPut(dto);
 
-		/* Domestic_AnimalsDTO[] domestic_animalsDTO[] = dto.get(dto.length); */
-		
 		
 		if (dtos.size() > 1) {
-			HttpSession session = request.getSession();
-			session.setAttribute("OutPut_Info", dto);
+		
 		}
 		
-		response.sendRedirect("Output.jsp");
+		
 	}
 
 }
