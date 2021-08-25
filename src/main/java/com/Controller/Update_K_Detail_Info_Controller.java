@@ -63,7 +63,7 @@ public class Update_K_Detail_Info_Controller implements Command {
 
 		int fan_run = 0, wire_run = 0;
 
-		if (dto.getK_indoor_temp() > autodto.getFan_run()) {
+		if (dto.getK_indoor_humid() > autodto.getFan_run()) {
 			fan_run = 1;
 		}
 

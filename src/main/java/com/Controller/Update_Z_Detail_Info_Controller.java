@@ -56,7 +56,7 @@ public class Update_Z_Detail_Info_Controller implements Command {
 			wire_run = 1;
 		}
 		
-		if(dto.getZ_indoor_temp() >= autodto.getFan_run()) {
+		if(dto.getZ_indoor_humid() >= autodto.getFan_run()) {
 			fan_run = 1;
 		}
 		
