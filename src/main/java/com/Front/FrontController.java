@@ -21,6 +21,7 @@ import com.Controller.JoinController;
 import com.Controller.LoginController;
 import com.Controller.LogoutController;
 import com.Controller.SetOutPutController;
+import com.Controller.Update_All_Controll_Controller;
 import com.Controller.Update_Auto_RunningController;
 import com.Controller.Update_K_Detail_Info_Controller;
 import com.Controller.Update_Z_Detail_Info_Controller;
@@ -68,6 +69,8 @@ public class FrontController extends HttpServlet {
 			_interface = new Insert_Saltern_Controller();
 		}else if(result_URI.equals("SetOutPut.do")) {
 			_interface = new SetOutPutController();
+		}else if(result_URI.equals("Update_All_Controll.do")) {
+			_interface = new Update_All_Controll_Controller();
 		}else if(result_URI.equals("Update_Auto_Running.do")) {
 			_interface = new Update_Auto_RunningController();
 		}else if(result_URI.equals("Update_K_Detail_Info.do")) {
