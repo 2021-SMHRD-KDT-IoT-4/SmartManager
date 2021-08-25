@@ -63,7 +63,7 @@ public class Auto_Running_DAO {
 				int pump_run = rs.getInt("pump_run");
 				int wire_run = rs.getInt("wire_run");
 				int light_run = rs.getInt("light_run");
-				int stalinity_run = rs.getInt("stalinity_run");
+				int stalinity_run = rs.getInt("salinity_run");
 				int waterhigh_run = rs.getInt("waterhigh_run");
 			
 

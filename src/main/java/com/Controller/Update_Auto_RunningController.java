@@ -1,6 +1,7 @@
 package com.Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.Model.Auto_Running_DAO;
 import com.Model.Auto_Running_DTO;
+import com.Model.K_Detail_Info_DTO;
 
 
 public class Update_Auto_RunningController implements Command {
@@ -37,7 +39,16 @@ public class Update_Auto_RunningController implements Command {
 		HttpSession session = request.getSession();
 		session.setAttribute("result", rtn);
 		
-		response.sendRedirect("domesticAnimals.jsp");
+		PrintWriter out = response.getWriter();
+		if (req == 0) {
+
+			
+		} else {
+			
+				out.print("1");
+			
+		}
+		
 	}
 
 }
