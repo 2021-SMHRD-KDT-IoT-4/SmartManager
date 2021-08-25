@@ -15,6 +15,7 @@ import com.Controller.GetAll_K_Detail_Info_Controller;
 import com.Controller.GetAll_Z_Detail_Info_Controller;
 import com.Controller.GetAuto_RunningController;
 import com.Controller.GetOutPutController;
+import com.Controller.Get_All_Controll_Controller;
 import com.Controller.Insert_Saltern_Controller;
 import com.Controller.JoinController;
 import com.Controller.LoginController;
@@ -48,7 +49,7 @@ public class FrontController extends HttpServlet {
 		}else if(result_URI.equals("Logout.do")) {
 			_interface = new LogoutController();
 		}else if(result_URI.equals("GetAllControl.do")) {
-			//_interface = new ControlGetController();
+			_interface = new Get_All_Controll_Controller();
 		}else if(result_URI.equals("SetControl.do")) {
 			_interface = new ControlSetController();
 		}else if(result_URI.equals("Delete_K_Detail_Info.do")) {
