@@ -148,22 +148,21 @@ public class Z_Detail_info_DAO {
 		
 		conn();
 
-		String sql = "update Z_DETAIL_INFO set numbering=?, z_salinity=?, z_indoor_temp=?, z_indoor_humid =?,"
+		String sql = "update Z_DETAIL_INFO set z_salinity=?, z_indoor_temp=?, z_indoor_humid =?,"
 				+ "z_water_temp =?,z_wire_temp =?,z_water_high =?,z_place_size =?,z_pump_move =? WHERE numbering = ?";
 
 		try {
 			psmt = conn.prepareStatement(sql);
 
-			psmt.setInt(1, dto.getNumbering());
-			psmt.setInt(2, dto.getZ_salinity());
-			psmt.setInt(3, dto.getZ_indoor_temp());
-			psmt.setInt(4, dto.getZ_indoor_humid());
-			psmt.setInt(5, dto.getZ_water_temp());
-			psmt.setInt(6, dto.getZ_wire_temp());
-			psmt.setInt(7, dto.getZ_water_high());
-			psmt.setInt(9, dto.getZ_place_size());
-			psmt.setInt(11, dto.getZ_pump_move());
-			psmt.setInt(12, dto.getNumbering());
+			psmt.setInt(1, dto.getZ_salinity());
+			psmt.setInt(2, dto.getZ_indoor_temp());
+			psmt.setInt(3, dto.getZ_indoor_humid());
+			psmt.setInt(4, dto.getZ_water_temp());
+			psmt.setInt(5, dto.getZ_wire_temp());
+			psmt.setInt(6, dto.getZ_water_high());
+			psmt.setInt(7, dto.getZ_place_size());
+			psmt.setInt(8, dto.getZ_pump_move());
+			psmt.setInt(9, dto.getNumbering());
 
 			rtn = psmt.executeUpdate();
 

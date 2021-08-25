@@ -110,18 +110,17 @@ public class Auto_Running_DAO {
 		try {
 			conn();
 
-			String sql = "UPDATE AUTO_RUNNING SET numbering = ?, fan_run = ?, pump_run = ?, "
+			String sql = "UPDATE AUTO_RUNNING SET fan_run = ?, pump_run = ?, "
 					+ "wire_run = ?, light_run = ?, stalinity_run = ? WHERE numbering = ? ";
 
 			psmt = conn.prepareStatement(sql);
 
-			psmt.setInt(1, dto.getNumbering());
-			psmt.setInt(2, dto.getFan_run());
-			psmt.setInt(3, dto.getPump_run());
-			psmt.setInt(4, dto.getWire_run());
-			psmt.setInt(5, dto.getLight_run());
-			psmt.setInt(6, dto.getStalinity_run());
-			psmt.setInt(7, dto.getNumbering());
+			psmt.setInt(1, dto.getFan_run());
+			psmt.setInt(2, dto.getPump_run());
+			psmt.setInt(3, dto.getWire_run());
+			psmt.setInt(4, dto.getLight_run());
+			psmt.setInt(5, dto.getStalinity_run());
+			psmt.setInt(6, dto.getNumbering());
 			
 
 			rtn = psmt.executeUpdate();
