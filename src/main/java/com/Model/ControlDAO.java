@@ -101,7 +101,7 @@ public class ControlDAO {
 	public ControlDTO select(ControlDTO dto) {
 
 		conn();
-		list = new ArrayList<ControlDTO>();
+		
 		String sql = "select * from CONTROL";
 
 		try {
@@ -134,7 +134,7 @@ public class ControlDAO {
 	public ArrayList<ControlDTO> getAllControlls() {
 
 		conn();
-
+		list = new ArrayList<ControlDTO>();
 		String sql = "select * from CONTROL";
 
 		try {
