@@ -74,7 +74,7 @@ public class ControlDAO {
 	public int update(ControlDTO dto) {
 		conn();
 
-		String sql = "update CONTROL set fan=?, pump=?, wire=?, pusher=?, conveyer=?, light=?, camera=?,part = ? where numbering=?";
+		String sql = "update CONTROL set fan=?, pump=?, wire=?, pusher=?, conveyer=?, light=?, camera=? where numbering=?";
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -85,8 +85,7 @@ public class ControlDAO {
 			psmt.setInt(5, dto.getConveyer());
 			psmt.setInt(6, dto.getLight());
 			psmt.setInt(7, dto.getCamera());
-			psmt.setInt(8, dto.getPart());
-			psmt.setInt(9, dto.getNumbering());
+			psmt.setInt(8, dto.getNumbering());
 
 			rtn = psmt.executeUpdate();
 		} catch (SQLException e) {

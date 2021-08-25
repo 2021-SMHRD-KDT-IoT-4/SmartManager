@@ -40,6 +40,20 @@ public class ControlDTO {
 		this.part = part;
 		
 	}
+	
+	public ControlDTO(int numbering, int fan, int pump, int wire, int pusher, int conveyer, int light,
+			int camera) {
+		super();
+		this.numbering = numbering;
+		this.fan = fan;
+		this.pump = pump;
+		this.wire = wire;
+		this.pusher = pusher;
+		this.conveyer = conveyer;
+		this.light = light;
+		this.camera = camera;
+		
+	}
 
 
 

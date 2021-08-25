@@ -32,8 +32,8 @@ public class Update_All_Controll_Controller implements Command {
 										Integer.parseInt(request.getParameter("pusher")),
 										Integer.parseInt(request.getParameter("conveyer")),
 										Integer.parseInt(request.getParameter("light")),
-										Integer.parseInt(request.getParameter("camera")),
-										Integer.parseInt(request.getParameter("part")));
+										Integer.parseInt(request.getParameter("camera")));
+										
 		
 		int rtn = dao.update(dto);
 		
