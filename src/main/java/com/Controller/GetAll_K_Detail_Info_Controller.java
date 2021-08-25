@@ -33,7 +33,7 @@ public class GetAll_K_Detail_Info_Controller implements Command {
 
 		K_Detail_Info_DAO dao = new K_Detail_Info_DAO();
 		ArrayList<K_Detail_Info_DTO> resultDTO = dao.All_K_Detail_info();
-		
+		System.out.println("1111");
 		if (req == 0) {
 			if (resultDTO.size() > 0 ) {
 				response.sendRedirect("");
@@ -45,8 +45,7 @@ public class GetAll_K_Detail_Info_Controller implements Command {
 			if (resultDTO.size() > 0 ) {
 				
 				JSONObject rtn = new JSONObject();
-				JSONArray req_array = new JSONArray();
-				
+				JSONArray req_array = new JSONArray();		
 				for(int i = 0; i < resultDTO.size(); i++) {
 					JSONObject data = new JSONObject();
 					data.put("numbering", resultDTO.get(i).getNumbering());
