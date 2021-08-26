@@ -9,6 +9,10 @@ public class OutPut_DTO {
 		this.date_search = date_search;
 		this.prod = prod;
 	}
+	public OutPut_DTO(String date_search, int prod) {
+		this.date_search = date_search;
+		this.prod = prod;
+	}
 	public OutPut_DTO(int numbering) {
 		this.numbering = numbering;
 	}

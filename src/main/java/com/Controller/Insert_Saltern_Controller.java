@@ -64,8 +64,6 @@ public class Insert_Saltern_Controller implements Command {
 			auto_Running_DAO.Insert_Auto_Running(zAuto_Running_DTO);
 			auto_Running_DAO.Insert_Auto_Running(kAuto_Running_DTO);
 			
-			
-			
 			rtn = 1;
 			
 		} catch (Exception e) {

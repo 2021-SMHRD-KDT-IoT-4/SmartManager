@@ -11,7 +11,6 @@ public class OutPut_DAO {
 	private Connection conn = null;
 	private PreparedStatement psmt = null;
 	private ResultSet rs = null;
-	private OutPut_DTO dto = null;
 	ArrayList<OutPut_DTO> dtos=null;
 	private int rtn=0;
 	
@@ -46,23 +45,22 @@ public class OutPut_DAO {
 		}
 	}
 	
-	public ArrayList<OutPut_DTO> Get_All_OutPut(OutPut_DTO dto) {
+	public ArrayList<OutPut_DTO> Get_All_OutPut() {
 		 dtos= new ArrayList<OutPut_DTO>();
 		try {
 			conn();
-			String sql = "SELECT * FROM OUTPUT WHERE =?";
-			psmt.setInt(1, dto.getNumbering());
+			String sql = "SELECT date_search,sum(prod) FROM OUTPUT group by date_search";
 			psmt = conn.prepareStatement(sql);
 
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
 				
-				int numbering = rs.getInt("numbering");
+				
 				String date_search = rs.getString("date_search");
-				int prod = rs.getInt("prod");
+				int prod = rs.getInt("sum(prod)");
 
-				dtos.add(new OutPut_DTO(numbering, date_search, prod));
+				dtos.add(new OutPut_DTO( date_search, prod));
 			}
 
 		} catch (SQLException e) {

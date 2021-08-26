@@ -72,8 +72,8 @@ public class K_Detail_Info_DAO {
 				int k_wire_temp = rs.getInt(6);
 				int k_water_high = rs.getInt(7);
 				int k_daily_prod = rs.getInt(8);
-				String k_harvest = rs.getString(9);
-				int k_place_size = rs.getInt(10);
+				int k_place_size = rs.getInt(9);
+				String k_harvest = rs.getString(10);
 				int k_automode = rs.getInt(11);
 				int node = rs.getInt(12);
 

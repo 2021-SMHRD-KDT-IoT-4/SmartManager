@@ -82,7 +82,7 @@ public class MembersDAO {
 
 		try {
 
-			System.out.println("¿Ô´Ï2");
+	
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, dto.getId());
@@ -103,6 +103,7 @@ public class MembersDAO {
 		} finally {
 			close();
 		}
+		System.out.println(this.dto.getId() + "\n"  + this.dto.getPw());
 		return this.dto;
 	}
 	
