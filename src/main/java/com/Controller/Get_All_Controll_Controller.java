@@ -31,14 +31,14 @@ public class Get_All_Controll_Controller implements Command {
 			for (int i = 0; i < dtos.size(); i++) {
 				JSONObject data = new JSONObject();
 				data.put("numbering", dtos.get(i).getNumbering());
-				data.put("fan", dtos.get(i).getNumbering());
-				data.put("pump", dtos.get(i).getNumbering());
-				data.put("wire", dtos.get(i).getNumbering());
-				data.put("pusher", dtos.get(i).getNumbering());
-				data.put("conveyer", dtos.get(i).getNumbering());
-				data.put("light", dtos.get(i).getNumbering());
-				data.put("camera", dtos.get(i).getNumbering());
-				data.put("part", dtos.get(i).getNumbering());
+				data.put("fan", dtos.get(i).getFan());
+				data.put("pump", dtos.get(i).getPump());
+				data.put("wire", dtos.get(i).getWire());
+				data.put("pusher", dtos.get(i).getPusher());
+				data.put("conveyer", dtos.get(i).getConveyer());
+				data.put("light", dtos.get(i).getLight());
+				data.put("camera", dtos.get(i).getCamera());
+				data.put("part", dtos.get(i).getPart());
 				
 				req_array.add(data);
 			}

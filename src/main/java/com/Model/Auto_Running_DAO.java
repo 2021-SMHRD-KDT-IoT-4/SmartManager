@@ -75,7 +75,7 @@ public class Auto_Running_DAO {
 		} finally {
 			close();
 		}
-		return dto;
+		return this.dto;
 	}
 	
 	

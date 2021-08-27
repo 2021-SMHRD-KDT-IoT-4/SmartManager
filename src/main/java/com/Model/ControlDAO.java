@@ -106,7 +106,6 @@ public class ControlDAO {
 		try {
 			psmt = conn.prepareStatement(sql);
 
-			psmt.setInt(1, dto.getNumbering());
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {

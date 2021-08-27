@@ -31,9 +31,9 @@ public class Update_Auto_RunningController implements Command {
 				Integer.parseInt(request.getParameter("fan_run")),
 				Integer.parseInt(request.getParameter("pump_run")),
 				Integer.parseInt(request.getParameter("wire_run")),
-				Integer.parseInt(request.getParameter("light_run")),
+				0,
 				Integer.parseInt(request.getParameter("stalinity_run")),
-				Integer.parseInt(request.getParameter("waterhigh_run")));
+				0);
 		int rtn = dao.Update_Auto_Running(dto);
 		
 		HttpSession session = request.getSession();
