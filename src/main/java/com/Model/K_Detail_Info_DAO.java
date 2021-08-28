@@ -153,7 +153,7 @@ public class K_Detail_Info_DAO {
 		conn();
 
 		String sql = "update K_DETAIL_INFO set  k_salinity=?, k_indoor_temp=?, k_indoor_humid =?,"
-				+ "k_water_temp =?,k_wire_temp =?,k_water_high =?,k_daily_prod =?,k_harvest =?,k_place_size =?,k_auto_mode =?,node = ? where numbering = ?";
+				+ "k_water_temp =?,k_wire_temp =?,k_water_high =?,k_daily_prod =?,k_harvest =?,k_place_size =?,k_automode =?,node = ? where numbering = ?";
 
 		try {
 			psmt = conn.prepareStatement(sql);

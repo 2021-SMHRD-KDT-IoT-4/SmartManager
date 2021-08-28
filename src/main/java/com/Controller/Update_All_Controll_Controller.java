@@ -49,13 +49,13 @@ public class Update_All_Controll_Controller implements Command {
 			Z_Detail_info_DTO z_DTO = new Z_Detail_info_DTO(dto.getNumbering());
 			Z_Detail_info_DAO z_DAO = new Z_Detail_info_DAO();
 			z_DTO = z_DAO.Get_Z_Detail_info(z_DTO);
-			z_DTO.setZ_automode(1);
+			z_DTO.setZ_automode(0);
 			z_DAO.Update_Z_Detail_Info(z_DTO);
 		}else {
 			K_Detail_Info_DTO k_DTO = new K_Detail_Info_DTO(dto.getNumbering());
 			K_Detail_Info_DAO k_DAO = new K_Detail_Info_DAO();
 			k_DTO = k_DAO.Get_K_Detail_info(k_DTO);
-			k_DTO.setK_automode(1);
+			k_DTO.setK_automode(0);
 			k_DAO.Update_Detail_Info(k_DTO);
 		}
 		

@@ -38,7 +38,6 @@ public class Get_All_Controll_Controller implements Command {
 
 				if (dtos.get(i).getPart() == 0) {
 					Z_Detail_info_DTO dto = new Z_Detail_info_DTO(dtos.get(i).getNumbering());
-					System.out.println(dtos.get(i).getNumbering());
 					dto = new Z_Detail_info_DAO().Get_Z_Detail_info(dto);
 					autoMode = dto.getZ_automode();
 				} else {

@@ -30,12 +30,12 @@ public class Update_Controll_AutoMode implements Command {
 			z_DTO = z_DAO.Get_Z_Detail_info(z_DTO);
 			int autoMode = z_DTO.getZ_automode() == 1 ? 0 : 1;
 			z_DTO.setZ_automode(autoMode);
-			System.out.println(autoMode + "??");
 			rtn = z_DAO.Update_Z_Detail_Info(z_DTO);
 		} else {
 			K_Detail_Info_DTO k_DTO = new K_Detail_Info_DTO(numbering);
 			K_Detail_Info_DAO k_DAO = new K_Detail_Info_DAO();
 			k_DTO = k_DAO.Get_K_Detail_info(k_DTO);
+			System.out.println(k_DTO.getK_automode());
 			int autoMode = k_DTO.getK_automode() == 1 ? 0 : 1;
 			k_DTO.setK_automode(autoMode);
 			rtn = k_DAO.Update_Detail_Info(k_DTO);
