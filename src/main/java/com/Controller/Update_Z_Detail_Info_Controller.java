@@ -37,42 +37,47 @@ public class Update_Z_Detail_Info_Controller implements Command {
 		}
 
 		Z_Detail_info_DTO dto = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid,
-				z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move);
+				z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move, 0);
+
 		Z_Detail_info_DAO dao = new Z_Detail_info_DAO();
+		int automode = dao.Get_Z_Detail_info(dto).getZ_automode();
+
+		dto.setZ_automode(automode);
 
 		int cnt = dao.Update_Z_Detail_Info(dto);
-		
+
 		Auto_Running_DTO autodto = new Auto_Running_DTO(numbering);
 		Auto_Running_DAO autodao = new Auto_Running_DAO();
 		autodto = autodao.Get_Auto_Running(autodto);
-		
+
 		ControlDTO cdto = new ControlDTO(numbering);
 		ControlDAO cdao = new ControlDAO();
 		cdto = cdao.select(cdto);
-		
-		int fan_run = 0, wire_run=0;
-		
-		if(dto.getZ_water_temp() <= autodto.getWire_run()) {
+
+		int fan_run = 0, wire_run = 0;
+
+		if (dto.getZ_water_temp() <= autodto.getWire_run()) {
 			wire_run = 1;
 		}
-		
-		if(dto.getZ_indoor_humid() >= autodto.getFan_run()) {
+
+		if (dto.getZ_indoor_humid() >= autodto.getFan_run()) {
 			fan_run = 1;
 		}
-		
-		if(dto.getZ_water_high() == 0 && cdto.getPump() == 0) {
-			cdto.setPump(1); 
+
+		if (dto.getZ_water_high() == 0 && cdto.getPump() == 0) {
+			cdto.setPump(1);
 		}
-		if(cdto.getPump() == 1 && dto.getZ_water_high() >= autodto.getPump_run()) {   // 물 공급시 펌프 정지 물 높이 
+		if (cdto.getPump() == 1 && dto.getZ_water_high() >= autodto.getPump_run()) { // 물 공급시 펌프 정지 물 높이
 			cdto.setPump(0);
 		}
-
 		
 		cdto.setFan(fan_run);
 		cdto.setWire(wire_run);
 
-		cdao.update(cdto);
-		
+		if (dto.getZ_automode() == 1) {
+			cdao.update(cdto);
+		}
+
 		PrintWriter out = response.getWriter();
 		if (cnt > 0) {
 			out.print("1");

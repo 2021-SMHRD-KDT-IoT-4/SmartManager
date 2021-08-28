@@ -50,6 +50,8 @@ public class Z_Detail_info_DAO {
 		}
 	}
 	
+
+	
 	public ArrayList<Z_Detail_info_DTO> All_Z_Detail_info() {
 
 		z_list = new ArrayList<Z_Detail_info_DTO>();
@@ -72,8 +74,9 @@ public class Z_Detail_info_DAO {
 				int z_water_high = rs.getInt(7);
 				int z_place_size = rs.getInt(8);
 				int z_pump_move = rs.getInt(9);
+				int z_automode = rs.getInt(10);
 				
-				info = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid, z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move);
+				info = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid, z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move,z_automode);
 				z_list.add(info);
 			}
 
@@ -92,10 +95,11 @@ public class Z_Detail_info_DAO {
 		conn();
 
 		try {
-			String sql = "select * from z_detail_info where = ?";
-
-			psmt.setInt(1, dto.getNumbering());
+			String sql = "select * from z_detail_info where numbering = ?";
+	
 			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, dto.getNumbering());
+		
 			rs = psmt.executeQuery();
 
 			if (rs.next()) {
@@ -109,8 +113,9 @@ public class Z_Detail_info_DAO {
 				int z_water_high = rs.getInt(7);
 				int z_place_size = rs.getInt(8);
 				int z_pump_move = rs.getInt(9);
+				int z_automode = rs.getInt(10);
 				
-				info = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid, z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move);
+				info = new Z_Detail_info_DTO(numbering, z_salinity, z_indoor_temp, z_indoor_humid, z_water_temp, z_wire_temp, z_water_high, z_place_size, z_pump_move,z_automode);
 			
 			}
 
@@ -149,7 +154,7 @@ public class Z_Detail_info_DAO {
 		conn();
 
 		String sql = "update Z_DETAIL_INFO set z_salinity=?, z_indoor_temp=?, z_indoor_humid =?,"
-				+ "z_water_temp =?,z_wire_temp =?,z_water_high =?,z_place_size =?,z_pump_move =? WHERE numbering = ?";
+				+ "z_water_temp =?,z_wire_temp =?,z_water_high =?,z_place_size =?,z_pump_move =?,z_automode =? WHERE numbering = ?";
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -162,7 +167,8 @@ public class Z_Detail_info_DAO {
 			psmt.setInt(6, dto.getZ_water_high());
 			psmt.setInt(7, dto.getZ_place_size());
 			psmt.setInt(8, dto.getZ_pump_move());
-			psmt.setInt(9, dto.getNumbering());
+			psmt.setInt(9, dto.getZ_automode());
+			psmt.setInt(10, dto.getNumbering());
 
 			rtn = psmt.executeUpdate();
 
@@ -180,7 +186,7 @@ public class Z_Detail_info_DAO {
 		
 		conn();
 		
-		String sql = "insert into Z_DETAIL_INFO values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		String sql = "insert into Z_DETAIL_INFO values(?, ?, ?, ?, ?, ?, ?, ?, ?,?)";
 		
 		
 		try {
@@ -195,6 +201,7 @@ public class Z_Detail_info_DAO {
 			psmt.setInt(7, dto.getZ_water_high());
 			psmt.setInt(8, dto.getZ_place_size());
 			psmt.setInt(9, dto.getZ_pump_move());
+			psmt.setInt(10, dto.getZ_automode());
 
 			rtn = psmt.executeUpdate();
 			

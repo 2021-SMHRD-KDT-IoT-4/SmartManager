@@ -51,13 +51,13 @@ public class Saltern_DAO {
 		conn();
 
 		try {
-			String sql = "select * from SALTERN where = ?"; // where 조건 필요시 추가하기
-
+			String sql = "select * from SALTERN where numbering = ?"; 
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, dto.getNumbering());
 			rs = psmt.executeQuery();
 
-			while (rs.next()) {
+			if (rs.next()) {
+				
 				int numbering = rs.getInt(1);
 				String number_id = rs.getString(2);
 				int part = rs.getInt(3);
@@ -66,7 +66,6 @@ public class Saltern_DAO {
 			}
 
 		} catch (SQLException e) {
-
 			System.out.println(e.toString());
 		} finally {
 			close();

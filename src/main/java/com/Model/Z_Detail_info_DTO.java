@@ -11,10 +11,12 @@ public class Z_Detail_info_DTO {
 	private int z_water_high = 0; // 수위정보
 	private int z_place_size = 0; // 염전크기
 	private int z_pump_move = 0; // 펌프기동
+	private int z_automode = 0;
 
 	public Z_Detail_info_DTO(int numbering) {
 		this.numbering = numbering;
 	}
+	
 
 	public Z_Detail_info_DTO(int numbering, int z_place_size) {
 		this.numbering = numbering;
@@ -29,7 +31,7 @@ public class Z_Detail_info_DTO {
 	}
 
 	public Z_Detail_info_DTO(int numbering, int z_salinity, int z_indoor_temp, int z_indoor_humid, int z_water_temp,
-			int z_wire_temp, int z_water_high, int z_place_size, int z_pump_move) {
+			int z_wire_temp, int z_water_high, int z_place_size, int z_pump_move,int z_automode) {
 		this.numbering = numbering;
 		this.z_salinity = z_salinity;
 		this.z_indoor_temp = z_indoor_temp;
@@ -39,6 +41,7 @@ public class Z_Detail_info_DTO {
 		this.z_water_high = z_water_high;
 		this.z_place_size = z_place_size;
 		this.z_pump_move = z_pump_move;
+		this.z_automode = z_automode;
 	}
 
 	public int getNumbering() {
@@ -111,6 +114,14 @@ public class Z_Detail_info_DTO {
 
 	public void setZ_pump_move(int z_pump_move) {
 		this.z_pump_move = z_pump_move;
+	}
+
+	public int getZ_automode() {
+		return z_automode;
+	}
+
+	public void setZ_automode(int z_automode) {
+		this.z_automode = z_automode;
 	}
 
 }

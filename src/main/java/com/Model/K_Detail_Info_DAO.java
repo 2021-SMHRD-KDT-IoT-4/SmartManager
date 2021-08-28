@@ -51,6 +51,45 @@ public class K_Detail_Info_DAO {
 		}
 	}
 
+	public K_Detail_Info_DTO Get_K_Detail_info(K_Detail_Info_DTO dto) {
+	
+		k_list = new ArrayList<K_Detail_Info_DTO>();
+		conn();
+
+		try {
+			String sql = "select * from K_Detail_Info";
+
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+
+				int numbering = rs.getInt(1);
+				int k_salinity = rs.getInt(2);
+				int k_indoor_temp = rs.getInt(3);
+				int k_indoor_humid = rs.getInt(4);
+				int k_water_temp = rs.getInt(5);
+				int k_wire_temp = rs.getInt(6);
+				int k_water_high = rs.getInt(7);
+				int k_daily_prod = rs.getInt(8);
+				int k_place_size = rs.getInt(9);
+				String k_harvest = rs.getString(10);
+				int k_automode = rs.getInt(11);
+				int node = rs.getInt(12);
+
+				this.dto = new K_Detail_Info_DTO(numbering, k_salinity, k_indoor_temp, k_water_temp, k_wire_temp, k_water_high, k_daily_prod, k_harvest, k_place_size, k_indoor_humid, k_automode, node);			
+			}
+
+		} catch (SQLException e) {
+
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return this.dto;
+	}
+	 
+	
 	public ArrayList<K_Detail_Info_DTO> All_K_Detail_info() {
 
 		k_list = new ArrayList<K_Detail_Info_DTO>();

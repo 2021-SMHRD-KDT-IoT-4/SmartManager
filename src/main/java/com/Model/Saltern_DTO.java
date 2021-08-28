@@ -19,6 +19,13 @@ public class Saltern_DTO {
 		this.member_id = member_id;
 		this.part = part;
 	}
+	
+	
+	public Saltern_DTO(int numbering) {
+		this.numbering = numbering;
+	}
+
+
 
 
 

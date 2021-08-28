@@ -23,6 +23,7 @@ import com.Controller.LogoutController;
 import com.Controller.SetOutPutController;
 import com.Controller.Update_All_Controll_Controller;
 import com.Controller.Update_Auto_RunningController;
+import com.Controller.Update_Controll_AutoMode;
 import com.Controller.Update_K_Detail_Info_Controller;
 import com.Controller.Update_Z_Detail_Info_Controller;
 
@@ -77,7 +78,10 @@ public class FrontController extends HttpServlet {
 			_interface = new Update_K_Detail_Info_Controller();
 		}else if(result_URI.equals("Update_Z_Detail_Info.do")) {
 			_interface = new Update_Z_Detail_Info_Controller();
+		}else if(result_URI.equals("Update_Controll_AutoMode.do")) {
+			_interface = new Update_Controll_AutoMode();
 		}
+		
 		
 		_interface.command(request, response);
 	

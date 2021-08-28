@@ -82,9 +82,10 @@ public class Update_K_Detail_Info_Controller implements Command {
 
 		cdto.setFan(fan_run);
 		cdto.setWire(wire_run);
-
-		cdao.update(cdto);
-
+		if(dto.getK_automode()==1) {
+			cdao.update(cdto);
+		}
+	
 		// this.dto = new
 		// Auto_Running_DTO(numbering,fan_run,pump_run,wire_run,light_run);
 
