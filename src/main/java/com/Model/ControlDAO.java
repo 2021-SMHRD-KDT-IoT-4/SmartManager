@@ -96,7 +96,24 @@ public class ControlDAO {
 
 		return rtn;
 	}
+	public int LinearStop(ControlDTO dto) {
+		conn();
 
+		String sql = "update CONTROL set pusher=0 where numbering=?";
+
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, dto.getNumbering());
+
+			rtn = psmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return rtn;
+	}
 	public ControlDTO select(ControlDTO dto) {
 
 		conn();
